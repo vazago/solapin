@@ -11,7 +11,7 @@
         <report
                 id="id_card_front_2"
                 model="ej.solapin"
-                report_type="qweb-pdf"
+                report_type="qweb-html"
                 string="Modelo de Solapin 1"
                 name="solapin.template_card_front_1_table"
                 file="solapin.template_card_front_1_table"
@@ -44,7 +44,8 @@
                                 <br /><strong><b><span t-field="o.departament" /></b></strong>
                                 <br /> <br />
                                 <div style="height:30%;text-align:center;background-color:white;border-bottom-left-radius:20px;border-bottom-right-radius:20px;">
-                                    <img alt="o.ci" t-att-src="'../../../solapin/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.ci, 600, 600)" style="text-align:center;height:100px;width:125px;margin-top:5px;margin-bottom:5px;"/>
+                                    <!--<img alt="o.ci" t-att-src="'../../../solapin/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.ci, 600, 600)" style="text-align:center;height:100px;width:125px;margin-top:5px;margin-bottom:5px;"/>-->
+                                     <img alt="o.ci" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.ci, 600, 600)" style="text-align:center;height:100px;width:525px;margin-top:5px;margin-bottom:5px;"/>
                                 </div>
                                 <br />
                                 <div t-if="o.cargo == 'trabajador'"><div style="height:40px; text-align:center; vertical-align: middle; background-color:#E1BB12; vertical-align: middle; color:white; border-bottom-left-radius:10px; border-bottom-right-radius:10px;"><strong><b>PROFESOR</b></strong></div></div>
