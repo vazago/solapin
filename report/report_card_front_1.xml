@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright 2019 Coop IT Easy
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <data>
+        <!-- QWeb Reports -->
+        <!-- hr.employee -->
+
+        <report
+                id="id_card_front_2"
+                model="ej.solapin"
+                report_type="qweb-pdf"
+                string="Modelo de Solapin 1"
+                name="solapin.template_card_front_1_table"
+                file="solapin.template_card_front_1_table"
+            />
+
+        <template id="template_card_front_1_table">
+                <t t-call="web.basic_layout">
+                    <div class="page">
+                        <t t-foreach="docs" t-as="o">
+                        <div  style="border-spacing:0; width:310px;border: 1px solid black; border-radius:8px; padding:8px 3px 5px 3px">
+                            <table border="0" cellpadding="0" cellspacing="0" style="width:302px;">
+                            <tbody style="border-radius: 80px;">
+                            <tr style="height:20%; background-color: #ffffff;">
+                                <td>
+                                <div style="background-color:#FFFFFF; border-bottom-left-radius:15px;  border-bottom-right-radius:15px">
+                                <center>
+                                <img src="../../../solapin/static/src/img/broche.png" vspace="5"/>
+                                </center>
+                                <center>
+                                <img src="../../../solapin/static/src/img/logo_uo.png" width="225" height="62" style="width:70%;"/>
+                                </center>
+                        </div>
+                                </td>
+                            </tr>
+                            <tr style="height:70%; background-image:url('../../../solapin/static/src/img/background.png');">
+                                <td align="center">
+                                <br />
+                                    <img t-attf-src="data:image/*;base64,{{o.foto}}" style="width:150px;"/>
+                                    <br /><span t-field="o.name" />
+                                <br /><strong><b><span t-field="o.departament" /></b></strong>
+                                <br /> <br />
+                                <div style="height:30%;text-align:center;background-color:white;border-bottom-left-radius:20px;border-bottom-right-radius:20px;">
+                                    <img alt="o.ci" t-att-src="'../../../solapin/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.ci, 600, 600)" style="text-align:center;height:100px;width:125px;margin-top:5px;margin-bottom:5px;"/>
+                                </div>
+                                <br />
+                                <div t-if="o.cargo == 'trabajador'"><div style="height:40px; text-align:center; vertical-align: middle; background-color:#E1BB12; vertical-align: middle; color:white; border-bottom-left-radius:10px; border-bottom-right-radius:10px;"><strong><b>PROFESOR</b></strong></div></div>
+                                <div t-if="o.cargo == 'estudiante'"><div style="height:40px; text-align:center; vertical-align: middle; background-color:red; vertical-align: middle; color:white"><strong><b>ESTUDIANTE</b></strong></div></div>
+                                <div t-if="o.cargo == 'cuadro'"><div style="height:40px; text-align:center; vertical-align: middle; background-color:black; vertical-align: middle; color:white"><strong><b>CUADRO</b></strong></div></div>
+                                </td>
+                            </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                        </t>
+                    </div>
+                </t>
+        </template>
+    </data>
+</odoo>
