@@ -23,9 +23,11 @@
 
     # always loaded
     'data': [
-        'views/solapin_view.xml',
         'report/report_card_front_1.xml',
-        'security/ir.model.access.csv'
+        'report/report_card_front_2.xml',
+        # 'report/report_card_front_3.xml',
+        'views/res_partner_views.xml',
+        # 'security/ir.model.access.csv'
     ],
     # only loaded in demonstration mode
     'demo': [

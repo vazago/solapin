@@ -1,63 +1,210 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <!--
      Copyright 2019 Coop IT Easy
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 -->
 <odoo>
     <data>
-        <!-- QWeb Reports -->
-        <!-- hr.employee -->
+        <record id="paperformat_solapin" model="report.paperformat">
+            <field name="name">Solapin</field>
+            <field name="format">A4</field>
+            <field name="margin_top">16</field>
+            <field name="margin_bottom">16</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
 
-        <report
-                id="id_card_front_2"
-                model="ej.solapin"
-                report_type="qweb-pdf"
-                string="Modelo de Solapin 1"
-                name="solapin.template_card_front_1_table"
-                file="solapin.template_card_front_1_table"
-            />
+        </record>
+        <record id="solapin_cara_delantera" model="ir.actions.report">
+            <field name="name">Solapin, Cara Delantera</field>
+            <field name="model">res.partner</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">solapin.template_card_front_1_table</field>
+            <field name="report_file">solapin.template_card_front_1_table</field>
+            <field name="paperformat_id" ref="solapin.paperformat_solapin"/>
+            <field name="binding_model_id" ref="base.model_res_partner"/>
+            <field name="binding_type">report</field>
+        </record>
 
         <template id="template_card_front_1_table">
-                <t t-call="web.basic_layout">
-                    <div class="page">
-                        <t t-foreach="docs" t-as="o">
-                        <div  style="border-spacing:0; width:310px;border: 1px solid black; border-radius:8px; padding:8px 3px 5px 3px">
-                            <table border="0" cellpadding="0" cellspacing="0" style="width:302px;">
-                            <tbody style="border-radius: 80px;">
-                            <tr style="height:20%; background-color: #ffffff;">
-                                <td>
-                                <div style="background-color:#FFFFFF; border-bottom-left-radius:15px;  border-bottom-right-radius:15px">
-                                <center>
-                                <img src="../../../solapin/static/src/img/broche.png" vspace="5"/>
-                                </center>
-                                <center>
-                                <img src="../../../solapin/static/src/img/logo_uo.png" width="225" height="62" style="width:70%;"/>
-                                </center>
-                        </div>
-                                </td>
-                            </tr>
-                            <tr style="height:70%; background-image:url('../../../solapin/static/src/img/background.png');">
-                                <td align="center">
-                                <br />
-                                    <img t-attf-src="data:image/*;base64,{{o.foto}}" style="width:150px;"/>
-                                    <br /><span t-field="o.name" />
-                                <br /><strong><b><span t-field="o.departament" /></b></strong>
-                                <br /> <br />
-                                <div style="height:30%;text-align:center;background-color:white;border-bottom-left-radius:20px;border-bottom-right-radius:20px;">
-                                    <img alt="o.ci" t-att-src="'../../../solapin/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.ci, 600, 600)" style="text-align:center;height:100px;width:125px;margin-top:5px;margin-bottom:5px;"/>
-                                </div>
-                                <br />
-                                <div t-if="o.cargo == 'trabajador'"><div style="height:40px; text-align:center; vertical-align: middle; background-color:#E1BB12; vertical-align: middle; color:white; border-bottom-left-radius:10px; border-bottom-right-radius:10px;"><strong><b>PROFESOR</b></strong></div></div>
-                                <div t-if="o.cargo == 'estudiante'"><div style="height:40px; text-align:center; vertical-align: middle; background-color:red; vertical-align: middle; color:white"><strong><b>ESTUDIANTE</b></strong></div></div>
-                                <div t-if="o.cargo == 'cuadro'"><div style="height:40px; text-align:center; vertical-align: middle; background-color:black; vertical-align: middle; color:white"><strong><b>CUADRO</b></strong></div></div>
-                                </td>
-                            </tr>
-                            </tbody>
+            <t t-call="web.basic_layout">
+                <div class="page">
+                    <t t-foreach="docs" t-as="o">
+                    <head>
+                    </head>
+                        <div style="border-spacing:0; width:235px; height: 350px; border: 1px solid black; border-radius:8px; padding:8px 3px 5px 3px; float:left; margin-left:20px; margin-bottom:20px;">
+                            <table border="0" cellpadding="0" cellspacing="0" style="width:227px; border: 0px solid white;">
+                                <tbody style="border-radius: 80px;">
+                                    <tr style="height:20%; background-color: #ffffff;">
+                                        <td>
+                                            <div style="background-color:#FFFFFF; border-bottom-left-radius:15px; border-bottom-right-radius:15px">
+                                                <center>
+                                                    <img src="/solapin/static/src/img/broche.png" width="55"
+                                                         height="25" style="text-align:center; padding-bottom: 10px;"/>
+                                                </center>
+                                                <center>
+                                                    <img src="/solapin/static/src/img/logo_uo.png" width="200"
+                                                         height="50" style="padding-bottom: 10px;"/>
+                                                </center>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr style="height:70%; background-image:url('/solapin/static/src/img/background.png');">
+                                        <td align="center">
+
+                                            <!--Foto-->
+                                            <img t-attf-src="data:image/*;base64,{{o.image_1920}}" border="0" style="width:97px; height:105px; padding-top: 10px; padding-bottom: 8px; background-image:url('/solapin/static/src/img/no_img.png'); border-image:none;"/>
+                                            <br/>
+
+                                            <!--CUADRO-->
+                                            <div t-if="o.categorias == 'cuadro'">
+                                                <div>
+                                                    <span  style="font:15px Myriad Pro Condensada monospace; text-transform: capitalize;">
+                                                        <t t-esc="o.name.lower()" style="font:15px Myriad Pro Condensada monospace; text-transform: capitalize;"/>
+                                                    </span>
+                                                </div>
+                                                <!--Departamento-->
+                                                <div style="font:bold 14px Myriad Pro Condensada monospace; letter-spacing: 1px; height: 45px">
+                                                    <div>
+                                                        <span  style="font:15px Myriad Pro Condensada monospace; text-transform: capitalize;">
+                                                        <strong><b><t t-esc="o.work_position_id.name.lower()" style="font:15px Myriad Pro Condensada monospace; text-transform: capitalize;"/></b></strong>
+                                                        </span>
+<!--                                                        <span t-field="o.work_position_id.name" style="font:bold 14px Myriad Pro Condensada monospace;"/>-->
+                                                    </div>
+                                                    <strong>
+                                                        <b>
+                                                            <div style="font:bold 14px Myriad Pro Condensada monospace; letter-spacing: 1px; height: 65px; width:225px" >
+<!--                                                                <span t-field="o.area_base_id" style="font:bold 14px Myriad Pro Condensada monospace;"/><br/>-->
+                                                                 <span t-field="o.siglas" style="font:bold 15px Myriad Pro Condensada monospace;"/><br/><br/>
+                                                            </div>
+                                                        </b>
+                                                    </strong>
+                                                </div>
+                                            </div>
+
+                                            <!--FUNCIONARIO-->
+                                            <div t-if="o.categorias == 'funcionario'">
+                                                <div>
+                                                    <span  style="font:15px Myriad Pro Condensada monospace; text-transform: capitalize;">
+                                                        <t t-esc="o.name.lower()" style="font:15px Myriad Pro Condensada monospace; text-transform: capitalize;"/>
+                                                    </span>
+                                                </div>
+                                                <!--Departamento-->
+                                                <div style="font:bold 14px Myriad Pro Condensada monospace; letter-spacing: 1px; height: 45px">
+                                                    <div>
+                                                        <span  style="font:15px Myriad Pro Condensada monospace; text-transform: capitalize;">
+                                                        <strong><b><t t-esc="o.work_position_id.name.lower()" style="font:15px Myriad Pro Condensada monospace; text-transform: capitalize;"/></b></strong>
+                                                        </span>
+                                                    </div>
+                                                    <strong>
+                                                        <b>
+                                                            <div style="font:bold 14px Myriad Pro Condensada monospace; letter-spacing: 1px; height: 65px; width:225px" >
+<!--                                                                <span t-field="o.area_base_id" style="font:bold 14px Myriad Pro Condensada monospace;"/><br/>-->
+                                                                 <span t-field="o.siglas" style="font:bold 15px Myriad Pro Condensada monospace;"/><br/><br/>
+                                                            </div>
+                                                        </b>
+                                                    </strong>
+                                                </div>
+                                            </div>
+
+                                            <!--PROFESOR-->
+                                            <div t-if="o.categorias == 'profesor'">
+                                                <div>
+                                                    <span  style="font:15px Myriad Pro Condensada monospace; text-transform: capitalize;">
+                                                        <t t-esc="o.name.lower()" style="font:15px Myriad Pro Condensada monospace; text-transform: capitalize;"/>
+                                                    </span>
+                                                </div>
+                                                <!--Departamento-->
+                                                <div style="font:bold 14px Myriad Pro Condensada monospace; letter-spacing: 1px; height: 45px">
+                                                    <strong>
+                                                        <b>
+                                                            <div>
+<!--                                                                <span t-field="o.area_base_id" style="font:bold 14px Myriad Pro Condensada monospace;"/>-->
+                                                                <span t-field="o.siglas" style="font:bold 15px Myriad Pro Condensada monospace;"/><br/><br/>
+                                                            </div>
+                                                        </b>
+                                                    </strong>
+                                                </div>
+                                            </div>
+
+                                            <!--TRABAJADOR-->
+                                            <div t-if="o.categorias == 'trabajador'">
+                                                <div>
+                                                    <span  style="font:15px Myriad Pro Condensada monospace; text-transform: capitalize;">
+                                                        <t t-esc="o.name.lower()" style="font:15px Myriad Pro Condensada monospace; text-transform: capitalize;"/>
+                                                    </span>
+                                                </div>
+                                            <!--Departamento-->
+                                                <div style="font:bold 14px Myriad Pro Condensada monospace; letter-spacing: 1px; height: 45px">
+                                                    <strong>
+                                                        <b>
+                                                            <div class="este">
+<!--                                                                <span t-field="o.area_base_id" style="font:bold 14px Myriad Pro Condensada monospace;"/>-->
+                                                                <span t-field="o.siglas" style="font:bold 15px Myriad Pro Condensada monospace;"/><br/><br/>
+                                                            </div>
+                                                        </b>
+                                                    </strong>
+                                                </div>
+                                            </div>
+
+                                            <!--ESTUDIANTE-->
+                                            <div t-if="o.categorias == 'estudiante'">
+                                                <div>
+                                                    <span  style="font:15px Myriad Pro Condensada monospace; text-transform: capitalize;">
+                                                        <t t-esc="o.name.lower()" style="font:15px Myriad Pro Condensada monospace; text-transform: capitalize;"/>
+                                                    </span>
+                                                </div>
+                                            <!--Departamento-->
+                                                <div style="font:bold 14px Myriad Pro Condensada monospace; letter-spacing: 1px; height: 45px">
+                                                    <strong>
+                                                        <b>
+                                                            <div>
+                                                                <span t-field="o.faculty_id" style="font:bold 14px Myriad Pro Condensada monospace;"/>
+                                                            </div>
+                                                        </b>
+                                                    </strong>
+                                                </div>
+                                            </div>
+
+                                            <!--INVESTIGADOR-->
+                                            <div t-if="o.categorias == 'investigador'">
+                                                <div>
+                                                    <span  style="font:15px Myriad Pro Condensada monospace; text-transform: capitalize;">
+                                                        <t t-esc="o.name.lower()" style="font:15px Myriad Pro Condensada monospace; text-transform: capitalize;"/>
+                                                    </span>
+                                                </div>
+                                            <!--Departamento-->
+                                                <div style="font:bold 14px Myriad Pro Condensada monospace; letter-spacing: 1px; height: 45px">
+                                                    <strong>
+                                                        <b>
+                                                            <div>
+<!--                                                                <span t-field="o.area_base_id" style="font:bold 14px Myriad Pro Condensada monospace;"/>-->
+                                                                <span t-field="o.siglas" style="font:bold 15px Myriad Pro Condensada monospace;"/><br/><br/>
+                                                            </div>
+                                                        </b>
+                                                    </strong>
+                                                </div>
+                                            </div>
+<!--                                            Codigo de barras-->
+                                            <div style="text-align:center;">
+                                                <span t-field="o.carne_id" t-options="{'widget': 'barcode', 'humanreadable': 1, 'width': 200,'height': 42,'img_style':'width:200px;height:42px; margin-top:5px; margin-bottom:5px; background-color:white'}"/>
+                                            </div>
+                                            <div style="background-color:white;">
+                                                <div t-if="o.categorias == 'cuadro'"><div style="text-align:center; padding-top: 6px; padding-bottom: 6px; background-color:#EB2629; color:white; border-bottom-left-radius:10px; border-bottom-right-radius:10px; font:bold 16px monospace; letter-spacing: 3px"><strong><b>CUADRO</b></strong></div></div>
+                                                <div t-if="o.categorias == 'trabajador'"><div style="text-align:center; padding-top: 6px; padding-bottom: 6px; background-color:#E3BA12; color:black; border-bottom-left-radius:10px; border-bottom-right-radius:10px; font:bold 16px monospace; letter-spacing: 3px"><strong><b>TRABAJADOR</b></strong></div></div>
+                                                <div t-if="o.categorias == 'funcionario'"><div style="text-align:center; padding-top: 6px; padding-bottom: 6px; background-color:#075295; letter-spacing: 3px; height:2px"></div><div style="text-align:center; padding-top: 6px; padding-bottom: 6px; background-color:#DEF2FD; color:#075295; border-bottom-left-radius:10px; border-bottom-right-radius:10px; font:bold 16px monospace; letter-spacing: 3px"><strong><b>FUNCIONARIO</b></strong></div></div>
+                                                <div t-if="o.categorias == 'investigador'"><div style="text-align:center; padding-top: 6px; padding-bottom: 6px; background-color:#F0D91A; color:black; border-bottom-left-radius:10px; border-bottom-right-radius:10px; font:bold 16px monospace; letter-spacing: 3px"><strong><b>INVESTIGADOR</b></strong></div></div>
+                                                <div t-if="o.categorias == 'profesor'"><div style="text-align:center; padding-top: 6px; padding-bottom: 6px; background-color:#00599C; color:white; border-bottom-left-radius:10px; border-bottom-right-radius:10px; font:bold 16px monospace; letter-spacing: 3px"><strong><b>PROFESOR</b></strong></div></div>
+                                                <div t-if="o.categorias == 'estudiante'"><div style="text-align:center; padding-top: 6px; padding-bottom: 6px; background-color:#008CCC; color:white; border-bottom-left-radius:10px; border-bottom-right-radius:10px; font:bold 16px monospace; letter-spacing: 3px"><strong><b>ESTUDIANTE</b></strong></div></div>
+<!--                                                <div t-if="o.is_professor == True"><div style="text-align:center; padding-top: 6px; padding-bottom: 6px; background-color:#E3F1FC; color:#005193; border-bottom-left-radius:10px; border-bottom-right-radius:10px; font:bold 16px monospace; letter-spacing: 3px"><strong><b>VISITANTE</b></strong></div></div>-->
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
-                        </t>
-                    </div>
-                </t>
+                   </t>
+                </div>
+            </t>
         </template>
     </data>
 </odoo>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="gdu_solapin_partner_view_form_inherited" model="ir.ui.view">
+        <field name="name">Datos_Solapin</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="solapin" string="Datos del Solapín">
+                    <group name="informacion">
+                        <group name="group_left">
+<!--                            <field name="trabajador_id"/>-->
+                            <field name="name" class="este"/>
+<!--                            <field name="given_name"/>-->
+<!--                            <field name="last_name"/>-->
+                            <field name="carne_id"/>
+                            <field name="categoria_ocupacional"></field>
+                            <field name="is_work"/>
+                            <field name="is_student"/>
+                            <field name="is_professor"/>
+                            <field name="funcionario"/>
+                            <field name="investigador"/>
+                        </group>
+                        <group name="group_center">
+                            <field name="categorias"/>
+<!--                            <field name="no_trabajador"/>-->
+                            <field name="work_position_id"/>
+                            <field name="area_base_id"/>
+                            <field name="siglas"/>
+                            <field name="faculty_id"/>
+                        </group>
+                        <group name="group_right">
+                            <xpath expr="//field[@name = 'payment_reference']" position="after">
+                                <field name="qr_code" widget='image' class="oe_avatar"/>
+                            </xpath>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

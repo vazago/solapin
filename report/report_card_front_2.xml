@@ -1,84 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <!--
      Copyright 2019 Coop IT Easy
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 -->
 <odoo>
     <data>
-    <!-- QWeb Reports -->
-    <!-- NAME & FILE_NAME should be the same -->
-            <report
-                id="id_card_front_2"
-                model="gdu.persona"
-                report_type="qweb-html"
-                string="Modelo de Solapin 2"
-                name="gdu_solapines.template_card_front_2_table"
-                file="gdu_solapines.template_card_front_2_table"
-            />
+        <record id="paperformat_solapin" model="report.paperformat">
+            <field name="name">Solapin</field>
+            <field name="format">A4</field>
+            <field name="margin_top">16</field>
+            <field name="margin_bottom">16</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
 
-            <template id="template_card_front_2_table">
-                <t t-call="report.html_container">
-                    <div class="page">
-                        <t t-foreach="docs" t-as="o">
-                            <table style="border-spacing:0;height:100px;width:300px;border: 1px solid black;border-radius: 80px;" class="table">
-                                <tbody style="border-radius: 80px;">
-                                  <tr style="height:20%;background-color: #ffffff;">
-                                    <td>
-                                      <center>
-<!--                                        <img t-attf-src="data:image/*;base64,{{o.company_id.logo_web}}" style="width:70%;"/>-->
-                                          <img t-attf-src="/gdu_card/static/src/img/broche.png" style="width:25%;"/>
-                                      </center>
-                                      <center>
-<!--                                          <p t-field="o.company_id"/>-->
-                                          <img t-attf-src="/gdu_card/static/src/img/logo_uo.png" style="width:70%;"/>
-                                      </center>
-                                    </td>
-                                  </tr>
-<!--                                  <tr style="height:70%;background-color: #f2f2f2;">-->
-                                  <tr style="height:70%;background-image:url('/gdu_card/static/src/img/background.png');">
-                                    <td>
-                                      <center>
-                                      <div>
-                                        <img t-attf-src="data:image/*;base64,{{o.image}}" style="width:150px;"/>
-                                      </div>
-                                      <div style="font-size:20px;">
-                                        <strong><span t-field="o.name" /></strong>
-                                      </div>
-                                      <div style="font-size:15px;">
-                                        <div>
-                                          <strong>Departamento: </strong><span t-field="o.department_id"/>
-                                        </div>
-                                        <div>
-                                          <!-- <strong>Gender: </strong><span t-field="o.gender"/> -->
-                                          <!-- <strong>Gender: </strong> -->
-                                          <strong><span t-field="o.tipo_persona"/></strong>
-                                        </div>
-                                        <div>
-<!--                                          <strong>Job Title : </strong><span t-field="o.job_title"/>-->
-                                        </div>
-                                      </div>
-                                    <div>
+        </record>
+        <record id="solapin_cara_trasera" model="ir.actions.report">
+            <field name="name">Solapin, Cara Trasera</field>
+            <field name="model">res.partner</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">solapin.template_card_front_2_table</field>
+            <field name="report_file">solapin.template_card_front_2_table</field>
+            <field name="paperformat_id" ref="solapin.paperformat_solapin"/>
+            <field name="binding_model_id" ref="base.model_res_partner"/>
+            <field name="binding_type">report</field>
+        </record>
 
-                                    </div>
-                                          <div style="height:30%;text-align:center;background-color:white;border-bottom-left-radius:20px;border-bottom-right-radius:20px;border-top-left-radius:20px;border-top-right-radius:20px;">
-<!--                                          <div style="height:30%;text-align:center;background-color:white;border-bottom-left-radius:20px;border-bottom-right-radius:20px;">-->
-<!--                                              <img alt="barcode" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.name, 600, 120)" style="text-align:center;max-height:50pt;max-width:120%;;margin-top:5px;margin-bottom:5px;"/>-->
-                                              <img alt="barcode" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.identification_id, 300, 300)" style="margin-top:20px; margin-bottom:20px; width:300px;height:50px;"/>
-                                          </div>
-<!--                                      <div t-if="o.card_Id" class="col-xs-12">-->
-<!--                                        <img t-if="o.card_Id" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('QR', o.card_Id, 300, 300)" style="margin-top:20px; margin-bottom:20px; width:200px;height:200px;"/>-->
-<!--                                        <div class="col-xs-12"><span t-field="o.card_Id"/></div>-->
-<!--                                      </div>-->
-                                      </center>
-                                    </td>
-                                  </tr>
-                                </tbody>
-                            </table>
-                        </t>
-                    </div>
-                </t>
-            </template>
+        <template id="template_card_front_2_table">
+            <t t-call="web.basic_layout">
+                <div class="page">
+                    <t t-foreach="docs" t-as="o">
+                        <div style="border-spacing:0; width:235px; height: 350px; border: 1px solid black; border-radius:8px; padding:8px 3px 5px 3px; float:left; margin-left:20px; margin-bottom:20px;">
+                           <div style="text-align:center;"><br/><br/>
+                            <img t-attf-src="data:image/*;base64,{{o.qr_code}}" style="width:200px; height:200px; padding-top: 10px; padding-bottom: 8px;" alt="Código QR"/>
+                        </div>
+                        </div>
 
+                   </t>
+                </div>
+            </t>
+        </template>
     </data>
-
 </odoo>
