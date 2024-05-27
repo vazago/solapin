@@ -19,7 +19,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'gdu_expedientes', 'gdu_base'],
 
     # always loaded
     'data': [
@@ -27,7 +27,9 @@
         'report/report_card_front_2.xml',
         # 'report/report_card_front_3.xml',
         'views/res_partner_views.xml',
-        # 'security/ir.model.access.csv'
+        'security/res_partner_security.xml',
+        'security/ir.model.access.csv',
+
     ],
     # only loaded in demonstration mode
     'demo': [

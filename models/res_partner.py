@@ -95,11 +95,10 @@ class Partner(models.Model):
                    ('fcf', 'Fac. Cultura Física'),
                    ('fce', 'Fac. Ciencias de la Educación'),
                    ('gdr', 'Grup. Despacho del Rector'),
-                   ],compute='_compute_category_siglas')
+                   ], compute='_compute_category_siglas')
 
     @api.depends('area_base_id')
     def _compute_category_siglas(self):
-        print('verificando siglas......')
         for record in self:
             if record.area_base_id.name == 'FACULTAD DE CIENCIAS NATURALES Y EXACTAS':
                 record.siglas = 'fcne'
@@ -213,26 +212,24 @@ class Partner(models.Model):
                 record.siglas = 'cum_g'
             elif record.area_base_id.name == 'CENTRO UNIVERSITARIO MUNICIPAL JULIO ANTONIO MELLA':
                 record.siglas = 'cum_sjam'
-            # elif record.area_base_id.name == 'JEFE DE DEPARTAMENTO':
-            #     record.siglas = 'cum_tf'
-            # elif record.area_base_id.name == 'JEFE DE DEPARTAMENTO':
-            #     record.siglas = 'cum_sf'
-            # elif record.area_base_id.name == 'JEFE DE DEPARTAMENTO':
-            #     record.siglas = 'cum_sl'
-            # elif record.area_base_id.name == 'JEFE DE DEPARTAMENTO':
-            #     record.siglas = 'cum_sm'
-            # elif record.area_base_id.name == 'JEFE DE DEPARTAMENTO':
-            #     record.siglas = 'cum_c'
-            # elif record.area_base_id.name == 'JEFE DE DEPARTAMENTO':
-            #     record.siglas = 'cum_ps'
-            # elif record.area_base_id.name == 'JEFE DE DEPARTAMENTO':
-            #     record.siglas = 'cum_tf'
+            elif record.area_base_id.name == 'CENTRO UNIVERSITARIO MUNICIPAL TERCER FRENTE':
+                record.siglas = 'cum_tf'
+            elif record.area_base_id.name == 'CENTRO UNIVERSITARIO MUNICIPAL SEGUNDO FRENTE':
+                record.siglas = 'cum_sf'
+            elif record.area_base_id.name == 'CENTRO UNIVERSITARIO MUNICIPAL SAN LUIS':
+                record.siglas = 'cum_sl'
+            elif record.area_base_id.name == 'CENTRO UNIVERSITARIO MUNICIPAL SONGO LA MAYA':
+                record.siglas = 'cum_sm'
+            elif record.area_base_id.name == 'CENTRO UNIVERSITARIO MUNICIPAL CONTRAMAESTRE':
+                record.siglas = 'cum_c'
+            elif record.area_base_id.name == 'CENTRO UNIVERSITARIO MUNICIPAL PALMA SORIANO':
+                record.siglas = 'cum_ps'
             elif record.area_base_id.name == 'FACULTAD DE CONSTRUCCIONES':
                 record.siglas = 'contrucciones'
-            # elif record.area_base_id.name == 'JEFE DE DEPARTAMENTO':
-            #     record.siglas = 'dream'
-            # elif record.area_base_id.name == 'JEFE DE DEPARTAMENTO':
-            #     record.siglas = 'drejam'
+            elif record.area_base_id.name == 'DIRECCIÓN DE RESIDENCIA ESTUDIANTIL SEDE ANTONIO MACEO':
+                record.siglas = 'dream'
+            elif record.area_base_id.name == 'DIRECCIÓN DE RESIDENCIA ESTUDIANTIL SEDE JULIO ANTONIO MELLA':
+                record.siglas = 'drejam'
             else:
                 record.siglas = False
 
