@@ -9,6 +9,7 @@
 
         <record id="group_solapin_manager" model="res.groups">
             <field name="name">Administradores General</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
             <field name="category_id" ref="solapin_category"/>
         </record>
 
@@ -17,22 +18,11 @@
             <field name="category_id" ref="solapin_category"/>
         </record>
 
-<!--        <record model="ir.rule" id="only_solapin_manager_area">-->
-<!--            <field name="name">Administrador De Área: Solo ver miembros del área</field>-->
-<!--            <field name="model_id" ref="contacts.model_res_partner"/>-->
-<!--            <field name="groups" eval="[(4, ref('solapin.group_solapin_manager_area'))]"/>-->
-<!--            <field name="domain_force">[('area_base_id.id', '=', user.partner_id.area_base_id.id)]</field>-->
-<!--        </record>-->
-
-        <record model="ir.rule" id="tramites_area_user_rule">
-            <field name="name">Trámites: solo ver las solicitudes de su área</field>
+        <record model="ir.rule" id="only_solapin_manager_area">
+            <field name="name">Administrador De Área: Solo ver miembros del área</field>
             <field name="model_id" ref="model_res_partner"/>
-            <field name="groups" eval="[(4, ref('solapin.group_solapin_manager_area'))]"/>
-            <field name="domain_force">
-                [('area_id.id', '=', user.partner_id.area_id.id)]
-            </field>
+            <field name="groups" eval="[(4, ref('group_solapin_manager_area'))]"/>
+            <field name="domain_force">[('area_base_id', '=', user.area_base_id.id)]</field>
         </record>
-
-
     </data>
 </odoo>

@@ -21,10 +21,10 @@ class Partner(models.Model):
     given_name = fields.Char(string='Nombre')
     last_name = fields.Char(string='Apellidos')
 
-    @api.onchange('given_name')
-    def _ini_mayus(self):
-        self.given_name = self.given_name.title() if self.given_name else False
-        self.last_name = self.last_name.title() if self.last_name else False
+    # @api.onchange('given_name')
+    # def _ini_mayus(self):
+    #     self.given_name = self.given_name.title() if self.given_name else False
+    #     self.last_name = self.last_name.title() if self.last_name else False
 
     siglas = fields.Selection(
         string='Siglas',
@@ -95,9 +95,10 @@ class Partner(models.Model):
                    ('fcf', 'Fac. Cultura Física'),
                    ('fce', 'Fac. Ciencias de la Educación'),
                    ('gdr', 'Grup. Despacho del Rector'),
-                   ], compute='_compute_category_siglas')
+                   ],compute='_compute_category_siglas')
 
-    @api.depends('area_base_id')
+    # @api.depends('area_base_id')
+    @api.depends('siglas')
     def _compute_category_siglas(self):
         for record in self:
             if record.area_base_id.name == 'FACULTAD DE CIENCIAS NATURALES Y EXACTAS':
@@ -245,7 +246,6 @@ class Partner(models.Model):
 
     @api.depends('work_position_id')
     def _compute_category_ocupational(self):
-        print('verificando ......')
         for record in self:
             print(record.work_position_id.name)
 
