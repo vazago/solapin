@@ -1,0 +1,9 @@
+.este span {
+    text-transform: lowercase;
+}
+.este::first-line {
+    text-transform: capitalize
+}
+.este span:first-letter {
+    text-transform: capitalize
+}
