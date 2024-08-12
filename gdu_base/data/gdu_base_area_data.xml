@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1"><!---->
+        <record id="gdu_base_area_rectorado" model="gdu.base.area">
+            <field name="name">RECTORADO</field>
+            <field name="rango_inicial">AA000</field>
+            <field name="rango_final">AA000</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_sg" model="gdu.base.area">
+            <field name="name">SECRETARÍA GENERAL</field>
+            <field name="sigla">SG</field>
+            <field name="rango_inicial">AA001</field>
+            <field name="rango_final">AA007</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_gdrector" model="gdu.base.area">
+            <field name="name">GRUPO DE DESPACHO DEL RECTOR</field>
+            <field name="rango_inicial">AA008</field>
+            <field name="rango_final">AA010</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_puesto_direccion" model="gdu.base.area">
+            <field name="name">PUESTO DE DIRECCION</field>
+            <field name="rango_inicial">AA011</field>
+            <field name="rango_final">AA012</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_direccion_general_economica" model="gdu.base.area">
+            <field name="name">DIRECCIÓN GENERAL ECONÓMICA</field>
+            <field name="sigla">DGE</field>
+            <field name="rango_inicial">BB000</field>
+            <field name="rango_final">BB000</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_direccion_economica" model="gdu.base.area">
+            <field name="name">DIRECCIÓN ECONÓMICA</field>
+            <field name="sigla">DECO</field>
+            <field name="rango_inicial">BB001</field>
+            <field name="rango_final">BB011</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_drh" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE RECURSOS HUMANOS</field>
+            <field name="sigla">DRH</field>
+            <field name="rango_inicial">BB012</field>
+            <field name="rango_final">BB023</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_dgas" model="gdu.base.area">
+            <field name="name">DIRECCIÓN GENERAL DE ADMINISTRACIÓN Y SERVICIOS</field>
+            <field name="sigla">DGAS</field>
+            <field name="rango_inicial">CC000</field>
+            <field name="rango_final">CC000</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_dgas_direccion_logistica" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE LOGÍSTICA</field>
+            <field name="sigla">DL</field>
+            <field name="rango_inicial">CC001</field>
+            <field name="rango_final">CC003</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_dgas_dim" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE INVERSIONES Y MANTENIMIENTO</field>
+            <field name="sigla">DIM</field>
+            <field name="rango_inicial">CC004</field>
+            <field name="rango_final">CC016</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_dgas_direccion_transporte" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE TRANSPORTE</field>
+            <field name="rango_inicial">CC017</field>
+            <field name="rango_final">CC021</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_dgas_dpto_poligrafico" model="gdu.base.area">
+            <field name="name">DEPARTAMENTO POLIGRÁFICO</field>
+            <field name="rango_inicial">CC022</field>
+            <field name="rango_final">CC027</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_dgas_direccion_sede_am" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE SEDE ANTONIO MACEO</field>
+            <field name="rango_inicial">CC028</field>
+            <field name="rango_final">CC049</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_dgas_direccion_sede_jam" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE SEDE JULIO ANTONIO MELLA</field>
+            <field name="rango_inicial">CC050</field>
+            <field name="rango_final">CC065</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_gaue" model="gdu.base.area">
+            <field name="name">GRUPO DE AHORRO Y USO DE ENERGÍA</field>
+            <field name="rango_inicial">CC066</field>
+            <field name="rango_final">CC0661</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_dgre" model="gdu.base.area">
+            <field name="name">DIRECCIÓN GENERAL DE RESIDENCIAS ESTUDIANTILES</field>
+            <field name="sigla">DGRE</field>
+            <field name="rango_inicial">CC067</field>
+            <field name="rango_final">CC0671</field>
+            <field name="centro">uo</field>
+        </record>
+        <record id="gdu_base_area_dgre_direccion_maceo" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE RESIDENCIA ESTUDIANTIL SEDE ANTONIO MACEO</field>
+            <field name="rango_inicial">CC068</field>
+            <field name="rango_final">CC087</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_dgre_direccion_mella" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE RESIDENCIA ESTUDIANTIL SEDE JULIO ANTONIO MELLA</field>
+            <field name="rango_inicial">CC088</field>
+            <field name="rango_final">CC108</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_dgre_direccion_alojamiento" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE ALOJAMIENTO</field>
+            <field name="rango_inicial">CC109</field>
+            <field name="rango_final">CC111</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_direcion_cuadros" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE CUADROS</field>
+            <field name="rango_inicial">DD000</field>
+            <field name="rango_final">DD001</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_vrp_direccion_defensa_sam" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE DEFENSA Y SEGURIDAD SEDE ANTONIO MACIO</field>
+            <field name="rango_inicial">DD002</field>
+            <field name="rango_final">DD003</field>
+            <field name="centro">uo</field>
+        </record>
+        <record id="gdu_base_area_vrp_direccion_defensa_sjam" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE DEFENSA Y SEGURIDAD SEDE JULIO ANTONIO MELLA</field>
+            <field name="rango_inicial">DD004</field>
+            <field name="rango_final">DD005</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_dopec" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE ORGANIZACIÓN PLANIFICACIÓN EVALUACIÓN Y CALIDAD</field>
+            <field name="rango_inicial">DD006</field>
+            <field name="rango_final">DD008</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_vreu_direccion_eu" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE EXTENSIÓN UNIVERSITARIA</field>
+            <field name="rango_inicial">DD009</field>
+            <field name="rango_final">DD011</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_vrd_direccion_fp" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE FORMACIÓN DE PREGRADO</field>
+            <field name="rango_inicial">DD012</field>
+            <field name="rango_final">DD012</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_vrd_dml" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE HISTORIA Y MARXISMO-LENINISMO</field>
+            <field name="rango_inicial">DD013</field>
+            <field name="rango_final">DD017</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_vrd_dict" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE INFORMACIÓN CIENTÍFICO TÉCNICO</field>
+            <field name="sigla">DICT</field>
+            <field name="rango_inicial">DD018</field>
+            <field name="rango_final">DD026</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_vrip_dep" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE EDUCACIÓN DE POSTGRADO</field>
+            <field name="rango_inicial">DD027</field>
+            <field name="rango_final">DD028</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_vrip_dcti" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE CIENCIAS TECNOLOGÍA E INNOVACIÓN</field>
+            <field name="rango_inicial">DD029</field>
+            <field name="rango_final">DD032</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_vrri_dri" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE RELACIONES INTERNACIONALES</field>
+            <field name="sigla">DRI</field>
+            <field name="rango_inicial">DD033</field>
+            <field name="rango_final">DD036</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_vrri_dinf" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE INFORMATIZACIÓN</field>
+            <field name="sigla">DINF</field>
+            <field name="rango_inicial">DD037</field>
+            <field name="rango_final">DD049</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_vrri_dci" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE COMUNICACIÓN INSTITUCIONAL</field>
+            <field name="rango_inicial">DD050</field>
+            <field name="rango_final">DD053</field>
+            <field name="centro">uo</field>
+        </record>
+        <record id="gdu_base_area_dir_infgesdoc" model="gdu.base.area">
+            <field name="name">DIRECCIOÓN DE INFORMACIÓN Y GESTIÓN DOCUMENTAL</field>
+            <field name="rango_inicial">DD054</field>
+            <field name="rango_final">DD056</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_dir_preparacion_cuadro" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE PREPARACIÓN Y SUPERACIÓN DE CUADROS</field>
+            <field name="rango_inicial">DD057</field>
+            <field name="rango_final">DD057</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_dpto_juridico" model="gdu.base.area">
+            <field name="name">DEPARTAMENTO JURÍDICO</field>
+            <field name="rango_inicial">EE000</field>
+            <field name="rango_final">EE0001</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_dpto_auditoria" model="gdu.base.area">
+            <field name="name">DEPARTAMENTO DE AUDITORÍA</field>
+            <field name="rango_inicial">EE001</field>
+            <field name="rango_final">EE001</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_vreu_dpto_eventos" model="gdu.base.area">
+            <field name="name">DEPARTAMENTO DE EVENTO(DEPARTAMENTO NO DOCENTE)</field>
+            <field name="rango_inicial">EE002</field>
+            <field name="rango_final">EE002</field>
+            <field name="centro">uo</field>
+        </record>
+        <record id="gdu_base_area_vreu_dpto_protocolo" model="gdu.base.area">
+            <field name="name">DEPARTAMENTO DE PROTOCOLO</field>
+            <field name="rango_inicial">EE003</field>
+            <field name="rango_final">EE006</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_vrd_dpto_em" model="gdu.base.area">
+            <field name="name">DEPARTAMENTO DE ENSEÑANZA MILITAR</field>
+            <field name="rango_inicial">EE007</field>
+            <field name="rango_final">EE0071</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_vrip_dpto_comercializacion" model="gdu.base.area">
+            <field name="name">DEPARTAMENTO DE TRANSFERENCIA Y COMERCIALIZACIÓN</field>
+            <field name="rango_inicial">EE008</field>
+            <field name="rango_final">EE008</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_vreu_dpto_hist_patrimonio" model="gdu.base.area">
+            <field name="name">DEPARTAMENTO DE HISTORIA Y PATRIMONIO UNIVERSITARIO</field>
+            <field name="rango_inicial">EE010</field>
+            <field name="rango_final">EE010</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <!--record id="gdu_base_area_vrp_dopa" model="gdu.base.area">
+            <field name="name">DIRECCIÓN DE ORGANIZACIÓN PLANIFICACIÓN Y ARCHIVO</field>
+        </record>
+        <record id="gdu_base_area_vrp_observatorio" model="gdu.base.area">
+            <field name="name">OBSERVATORIO SOCIAL UNIVERSITARIO</field>
+        </record-->
+
+        <record id="gdu_base_area_fcne" model="gdu.base.area">
+            <field name="name">FACULTAD DE CIENCIAS NATURALES Y EXACTAS</field>
+            <field name="sigla">FCNE</field>
+            <field name="rango_inicial">FF000</field>
+            <field name="rango_final">FF016</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_fitib" model="gdu.base.area">
+            <field name="name">FAC DE INGENIERIA EN TELECOMUNICACIONES INFORMATICA Y BIOMEDICA</field>
+            <field name="sigla">FITIB</field>
+            <field name="rango_inicial">GG000</field>
+            <field name="rango_final">GG009</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_fcs" model="gdu.base.area">
+            <field name="name">FACULTAD DE CIENCIAS SOCIALES</field>
+            <field name="sigla">FSC</field>
+            <field name="rango_inicial">HH000</field>
+            <field name="rango_final">HH010</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_fh" model="gdu.base.area">
+            <field name="name">FACULTAD DE HUMANIDADES</field>
+            <field name="sigla">FH</field>
+            <field name="rango_inicial">II000</field>
+            <field name="rango_final">II011</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_fle" model="gdu.base.area">
+            <field name="name">FACULTAD DE LENGUAS EXTRANJERAS</field>
+            <field name="sigla">FLE</field>
+            <field name="rango_inicial">JJ000</field>
+            <field name="rango_final">JJ009</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_fcee" model="gdu.base.area">
+            <field name="name">FACULTAD DE CIENCIAS ECONÓMICAS Y EMPRESARIALES</field>
+            <field name="sigla">FCEE</field>
+            <field name="rango_inicial">KK000</field>
+            <field name="rango_final">KK019</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_fd" model="gdu.base.area">
+            <field name="sigla">FD</field>
+            <field name="name">FACULTAD DE DERECHO</field>
+            <field name="rango_inicial">LL000</field>
+            <field name="rango_final">LL005</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_fie" model="gdu.base.area">
+            <field name="name">FACULTAD DE INGENIERÍA ELÉCTRICA</field>
+            <field name="sigla">FIE</field>
+            <field name="rango_inicial">MM000</field>
+            <field name="rango_final">MM9106</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_fco" model="gdu.base.area">
+            <field name="name">FACULTAD DE CONSTRUCCIONES</field>
+            <field name="sigla">FOC</field>
+            <field name="rango_inicial">NN000</field>
+            <field name="rango_final">NN008</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_fimi" model="gdu.base.area">
+            <field name="name">FACULTAD DE INGENIERÍA MECÁNICA E INDUSTRIAL</field>
+            <field name="sigla">FIMI</field>
+            <field name="rango_inicial">OO000</field>
+            <field name="rango_final">OO010</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_fiqa" model="gdu.base.area">
+            <field name="name">FACULTAD DE INGENIERÍA QUÍMICA Y AGRONOMÍA</field>
+            <field name="sigla">FIQA</field>
+            <field name="rango_inicial">PP000</field>
+            <field name="rango_final">PP009</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_fcf" model="gdu.base.area">
+            <field name="name">FACULTAD DE CULTURA FÍSICA</field>
+            <field name="sigla">FCF</field>
+            <field name="rango_inicial">QQ000</field>
+            <field name="rango_final">QQ008</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_fce" model="gdu.base.area">
+            <field name="name">FACULTAD DE CIENCIAS DE LA EDUCACIÓN</field>
+            <field name="sigla">FCE</field>
+            <field name="rango_inicial">RR000</field>
+            <field name="rango_final">RR010</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_cum_palma" model="gdu.base.area">
+            <field name="name">CENTRO UNIVERSITARIO MUNICIPAL PALMA SORIANO</field>
+            <field name="sigla">CUM PALMA SORIANO</field>
+            <field name="rango_inicial">SS100</field>
+            <field name="rango_final">SS104</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_cum_contramaestre" model="gdu.base.area">
+            <field name="name">CENTRO UNIVERSITARIO MUNICIPAL CONTRAMAESTRE</field>
+            <field name="sigla">CUM CONTRAMAESTRE</field>
+            <field name="rango_inicial">SS200</field>
+            <field name="rango_final">SS205</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_cum_maya" model="gdu.base.area">
+            <field name="name">CENTRO UNIVERSITARIO MUNICIPAL SONGO LA MAYA</field>
+            <field name="sigla">CUM SONGO LA MAYA</field>
+            <field name="rango_inicial">SS300</field>
+            <field name="rango_final">SS304</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_cum_sanluis" model="gdu.base.area">
+            <field name="name">CENTRO UNIVERSITARIO MUNICIPAL SAN LUIS</field>
+            <field name="sigla">CUM SAN LUIS</field>
+            <field name="rango_inicial">SS400</field>
+            <field name="rango_final">SS405</field>
+            <field name="centro">uo</field>
+        </record>
+        <record id="gdu_base_area_cum_II_frente" model="gdu.base.area">
+            <field name="name">CENTRO UNIVERSITARIO MUNICIPAL SEGUNDO FRENTE</field>
+            <field name="sigla">CUM SEGUNDO FRENTE</field>
+            <field name="rango_inicial">SS500</field>
+            <field name="rango_final">SS503</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_cum_III_frente" model="gdu.base.area">
+            <field name="name">CENTRO UNIVERSITARIO MUNICIPAL TERCER FRENTE</field>
+            <field name="sigla">CUM TERCER FRENTE</field>
+            <field name="rango_inicial">SS600</field>
+            <field name="rango_final">SS603</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_cum_mella" model="gdu.base.area">
+            <field name="name">CENTRO UNIVERSITARIO MUNICIPAL JULIO ANTONIO MELLA</field>
+            <field name="sigla">CUM JULIO ANTONIO MELLA</field>
+            <field name="rango_inicial">SS700</field>
+            <field name="rango_final">SS703</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_cum_guama" model="gdu.base.area">
+            <field name="name">CENTRO UNIVERSITARIO MUNICIPAL GUAMÁ</field>
+            <field name="sigla">CUM GUAMÁ</field>
+            <field name="rango_inicial">SS800</field>
+            <field name="rango_final">SS804</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_cebi" model="gdu.base.area">
+            <field name="name">CENTRO DE ESTUDIO DE BIOTECNOLOGIA INDUSTRIAL</field>
+            <field name="sigla">CEBI</field>
+            <field name="rango_inicial">TT000</field>
+            <field name="rango_final">TT016</field>
+            <field name="centro">uo</field>
+        </record>
+
+        <record id="gdu_base_area_cnea" model="gdu.base.area">
+            <field name="name">CNEA</field>
+            <field name="sigla">CNEA</field>
+            <field name="rango_inicial">100000</field>
+            <field name="rango_final">999999</field>
+            <field name="centro">cnea</field>
+        </record>
+        <record id="gdu_base_area_cbm" model="gdu.base.area">
+            <field name="name">CBM</field>
+            <field name="sigla">CBM</field>
+            <field name="rango_inicial">A0000</field>
+            <field name="rango_final">B0000</field>
+            <field name="centro">cbm</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_gdu_base_area_group_erp_manager,gdu.base.area.group.erp.manager,model_gdu_base_area,base.group_erp_manager,1,1,1,1
+access_gdu_base_importaciones_group_erp_manager,gdu.base.importaciones.group.erp.manager,model_gdu_base_importaciones,base.group_erp_manager,1,1,1,1

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="gdu_base_direccion_sigenu_fce" model="gdu.department">
+            <field name="code">06824-16</field>
+            <field name="name">Ciencias de la Educación</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_fce')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_fecne" model="gdu.department">
+            <field name="code">06824-17</field>
+            <field name="name">Educación Ciencias Naturales y Exactas</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_fce')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_fiqa" model="gdu.department">
+            <field name="code">06824-01</field>
+            <field name="name">Ingeniería Química y Agronomía</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_fiqa')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_fcf" model="gdu.department">
+            <field name="code">06824-14</field>
+            <field name="name">Cultura Física</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_fcf')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_fie" model="gdu.department">
+            <field name="code">06824-02</field>
+            <field name="name">Ingeniería Eléctrica</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_fie')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_fecsh" model="gdu.department">
+            <field name="code">06824-15</field>
+            <field name="name">Educación Ciencias Sociales y Humanidades</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_fce')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_fimi" model="gdu.department">
+            <field name="code">06824-03</field>
+            <field name="name">Ingeniería Mecánica e Industrial</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_fimi')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_fco" model="gdu.department">
+            <field name="code">06824-04</field>
+            <field name="name">Construcciones</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_fco')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_fd" model="gdu.department">
+            <field name="code">06824-05</field>
+            <field name="name">Derecho</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_fd')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_fcee" model="gdu.department">
+            <field name="code">06824-10</field>
+            <field name="name">Ciencias Económicas y Empresariales</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_fcee')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_fcs" model="gdu.department">
+            <field name="code">06824-06</field>
+            <field name="name">Ciencias Sociales</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_fcs')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_fle" model="gdu.department">
+            <field name="code">06824-19</field>
+            <field name="name">Lenguas Extranjeras</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_fle')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_fitib" model="gdu.department">
+            <field name="code">06824-18</field>
+            <field name="name">Ingeniería en Telecomunicaciones, Informática y Biomédica</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_fitib')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_fcne" model="gdu.department">
+            <field name="code">06824-09</field>
+            <field name="name">Ciencias Naturales y Exactas</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_fcne')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_fh" model="gdu.department">
+            <field name="code">06824-07</field>
+            <field name="name">Humanidades</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_fh')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_cum_maya" model="gdu.department">
+            <field name="code">CUM001</field>
+            <field name="name">Sede Univ. Mcpio. Songo La Maya</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_cum_maya')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_cum_sanluis" model="gdu.department">
+            <field name="code">CUM002</field>
+            <field name="name">Sede Univ. Mcpio. San Luis</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_cum_sanluis')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_cum_contramaestre" model="gdu.department">
+            <field name="code">CUM003</field>
+            <field name="name">Sede Univ. Mcpio. Contramaestre</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_cum_contramaestre')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_cum_palma" model="gdu.department">
+            <field name="code">CUM004</field>
+            <field name="name">Sede Univ. Mcpio. Palma Soriano</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_cum_palma')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_cum_mella" model="gdu.department">
+            <field name="code">CUM005</field>
+            <field name="name">Sede Univ. Mcpio. Mella</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_cum_mella')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_cum_II_frente" model="gdu.department">
+            <field name="code">CUM006</field>
+            <field name="name">Sede Univ. Mcpio. II Frente</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_cum_II_frente')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_cum_III_frente" model="gdu.department">
+            <field name="code">CUM007</field>
+            <field name="name">Sede Univ. Mcpio. III Frente</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_cum_III_frente')"/>
+            <field name="center">uo</field>
+        </record>
+        <record id="gdu_base_direccion_sigenu_cum_III_guama" model="gdu.department">
+            <field name="code">CUM008</field>
+            <field name="name">Sede Univ. Mcpio. Guama</field>
+            <field name="area_base_id" eval="ref('gdu_base.gdu_base_area_cum_guama')"/>
+            <field name="center">uo</field>
+        </record>
+    </data>
+</odoo>

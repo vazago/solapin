@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_form_gdu_base_importaciones_wizard" model="ir.ui.view">
+        <field name="name">gdu.base.importaciones.form</field>
+        <field name="model">gdu.base.importaciones</field>
+        <field name="arch" type="xml">
+            <form string="Importaciones básicas">
+                <group string="Importar Datos">
+                    <h6>Asignar las áreas base a los departamentos</h6>
+                    <button type="object" name="asignar_area_a_los_departamentos" string="Asignar"/>
+
+                    <h6>Eliminar Areas</h6>
+                    <button type="object" name="borrar_areas" string="Borrar Areas"/>
+                </group>
+                <footer>
+                    <button special="cancel" string="Close" type="object" class="btn-primary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

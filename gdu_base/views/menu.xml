@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<odoo>
+    <record model="ir.actions.act_window" id="action_gdu_base_area">
+        <field name="name">Area</field>
+        <field name="res_model">gdu.base.area</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="limit">80</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_gdu_base_importaciones">
+        <field name="name">Importaciones Basicas</field>
+        <field name="res_model">gdu.base.importaciones</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="limit">80</field>
+    </record>
+
+    <!-- elementos del menú básicos -->
+    <menuitem id="gdu_base_menu_principal"
+              name="GDU Base"
+              sequence="1"
+              groups="base.group_system"
+    />
+    <menuitem id="gdu_base_menu"
+              name="Menu Base"
+              parent="gdu_base_menu_principal"
+              sequence="1"
+              groups="base.group_system"
+    />
+
+    <menuitem id="gdu_base_persona_menu"
+              name="Personas"
+              action="contacts.action_contacts"
+              parent="gdu_base_menu"
+              sequence="1"
+              groups="base.group_system"
+    />
+    <menuitem id="gdu_base_area_menu"
+              name="Áreas base"
+              action="action_gdu_base_area"
+              parent="gdu_base_menu"
+              sequence="4"
+              groups="base.group_system"
+    />
+
+    <menuitem id="gdu_base_departamento_menu"
+              name="Departamentos"
+              action="gdu_users.gdu_department_action_window"
+              parent="gdu_base_menu"
+              sequence="2"
+              groups="base.group_system"
+    />
+
+    <!-- elementos del menú importaciones -->
+    <menuitem id="gdu_base_configuraciones"
+              name="Configuraciones"
+              parent="gdu_base_menu_principal"
+              sequence="3"
+              groups="base.group_system"
+    />
+
+    <menuitem id="gdu_base_importaciones"
+              name="Importaciones básicas"
+              action="action_gdu_base_importaciones"
+              parent="gdu_base_configuraciones"
+              sequence="1"
+              groups="base.group_system"
+    />
+</odoo>

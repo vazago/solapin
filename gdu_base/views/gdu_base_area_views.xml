@@ -1,0 +1,26 @@
+<odoo>
+    <record id="gdu_base_area_view_tree" model="ir.ui.view">
+        <field name="name">GDU BASE - Area Tree</field>
+        <field name="model">gdu.base.area</field>
+        <field name="arch" type="xml">
+            <tree create="false" delete="false" edit="false">
+                <field name="name"/>
+                <field name="sigla"/>
+                <field name="centro"/>
+                <field name="rango_inicial"/>
+                <field name="rango_final"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="gdu_base_partner_view_form_inherited" model="ir.ui.view">
+        <field name="name">GDU BASE - Partner Form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="department_id" position="after">
+                <field name="area_base_id"/>
+            </field>
+        </field>
+    </record>
+</odoo>

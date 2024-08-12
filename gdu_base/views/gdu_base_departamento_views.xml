@@ -1,0 +1,12 @@
+<odoo>
+    <record id="gdu_base_departament_view_tree_inherited" model="ir.ui.view">
+        <field name="name">GDU BASE - Departamento Tree</field>
+        <field name="model">gdu.department</field>
+        <field name="inherit_id" ref="gdu_users.gdu_departament_view_tree"/>
+        <field name="arch" type="xml">
+            <field name="area_id" position="replace">
+                <field name="area_base_id"/>
+            </field>
+        </field>
+    </record>
+</odoo>
