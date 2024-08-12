@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<odoo> 
+<!-- Comentario en la Views -->
+     <record id="view_ej_solapin_form" model="ir.ui.view">
+        <field name="name">ej.solapin.form</field>
+        <field name="model">ej.solapin</field>
+        <field name="arch" type="xml">
+            <form string="Listado de Solapin">
+                <group>
+               <field name="foto" widget="image"/>
+               <field name="name"/>
+               <field name="cargo"/>
+               <field name="departament"/>
+               <field name="ci"/>
+                </group>
+            </form>
+        </field>
+    </record>
+     <record id="view_tree_solapin" model="ir.ui.view">
+        <field name="name">ej.solapin.tree</field>
+        <field name="model">ej.solapin</field>
+        <field name="arch" type="xml">
+           <tree>
+               <field name="name"/>
+               <field name="cargo"/>
+               <field name="departament"/>
+               <field name="ci"/>
+           </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="act_ej_solapin">
+        <field name="name">solapin</field>
+        <field name="res_model">ej.solapin</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id"  ref="view_tree_solapin" />
+    </record>
+<!--  Declaramos los menu --> 
+<menuitem id="ej_solapin_menu" name="Solapin" web_icon="stock,static/description/icon.png" sequence="10"/> 
+<menuitem id="submenu_ej_solapin_menu" name="Solapin" sequence="10" parent="ej_solapin_menu"/> 
+<menuitem id="submenu_ej_solapin_action" name="Solapin" sequence="10" parent="submenu_ej_solapin_menu" action="act_ej_solapin"/> 
+</odoo> 
