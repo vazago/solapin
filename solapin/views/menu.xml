@@ -8,6 +8,7 @@
             <field name="res_model">res.partner</field>
             <field name="view_mode">kanban,tree,form</field>
             <field name="domain">[('area_base_id.user_id', '=', uid)]</field>
+            <!-- <field name="domain">[('area_base_id.user_ids', 'like', uid)]</field> -->
             <field name="context"></field>                
         </record>
     

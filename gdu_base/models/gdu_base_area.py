@@ -15,3 +15,5 @@ class gdu_base_area(models.Model):
     rango_final = fields.Char('Rango final')
 
     user_id = fields.Many2one('res.users', string='Jefe de Área')
+
+    # user_ids = fields.One2many('comodel_name', 'inverse_field_name', string='user')
