@@ -28,7 +28,9 @@
         # 'report/report_card_front_3.xml',
         'views/res_partner_views.xml',
         'security/res_partner_security.xml',
-        'security/ir.model.access.csv'
+        'security/ir.model.access.csv',
+
+        'views/menu.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
