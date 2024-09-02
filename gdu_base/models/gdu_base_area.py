@@ -13,3 +13,5 @@ class gdu_base_area(models.Model):
 
     rango_inicial = fields.Char('Rango inicial')
     rango_final = fields.Char('Rango final')
+
+    user_id = fields.Many2one('res.users', string='Jefe de Área')
